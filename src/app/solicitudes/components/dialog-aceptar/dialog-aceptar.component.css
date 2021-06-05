@@ -1,0 +1,29 @@
+/* Cards */
+.main-card {
+    margin: 32px auto;
+    max-width: 1200px;
+    min-width: 400px;
+  }
+  
+  /* Spinner */
+  .mat-spinner {
+    margin: 0 auto;
+  }
+  
+  /* Buttons */
+  .btn-section {
+    margin-top: 2%;
+    margin-left: 0px;
+  }
+  
+  .btn-generate{
+    margin-right: 1rem;
+  }
+
+  .grid-label,.grid-input {
+    width: 100%;
+  }
+  .button-right {
+    display: flex;
+    justify-content: flex-end;
+  }

@@ -1,0 +1,48 @@
+/* Cards */
+.main-card {
+    margin: 16px auto;
+    max-width: 1200px;
+    min-width: 400px;
+  }
+  mat-card-actions {
+    width: 50px;
+    height: 50px;
+    margin-left: 500px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+  /* Spinner */
+  .mat-spinner {
+    margin: 0 auto;
+  }
+  
+  /* Buttons */
+  .btn-section {
+    margin-top: 2%;
+    margin-left: 0px;
+  }
+  
+  .btn-generate{
+    margin-right: 1rem;
+  }
+
+  .grid-label {
+      position: absolute;
+      right: 5px;
+  }
+  .grid-input {
+    position: absolute;
+    left: 5px;
+  }
+  .button-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+  .image-user{
+    width: 240px;
+    height: 300px;
+  }
+  .image-dni{
+    margin-bottom: 0px;
+  }

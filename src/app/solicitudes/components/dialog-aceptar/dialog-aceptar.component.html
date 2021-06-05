@@ -1,0 +1,66 @@
+
+<mat-card-title *ngIf="isBotonAceptado">Aceptar solicitud</mat-card-title>
+<mat-card-title *ngIf="!isBotonAceptado">Denegar solicitud</mat-card-title>
+<br>
+<mat-card-content>
+    
+    <mat-grid-list cols="4" rowHeight="30px">
+        
+        <mat-grid-tile colspan="1">
+            <div class="grid-label">
+            <p> <b>Destinatario:</b></p>
+            </div>
+        </mat-grid-tile>        
+        <mat-grid-tile colspan="3">
+            <div class="grid-input">
+            <p>{{correoUsuario}}</p>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+            <div class="grid-label">
+            <p> <b>Asunto: </b></p>
+            </div>
+        </mat-grid-tile>
+        
+        <mat-grid-tile *ngIf="isBotonAceptado" colspan="3">
+            <div class="grid-input">
+            <p>Cuenta Activa</p>
+            </div>
+        </mat-grid-tile>  
+
+        <mat-grid-tile *ngIf="!isBotonAceptado" colspan="3">
+            <div class="grid-input">
+            <p>Solicitud dermatólogo SunCare</p>
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <mat-label *ngIf="isBotonAceptado">
+        <p>
+            ¡Felicidades!<br>
+            Sus datos fueron comprobados, ya puede iniciar sesión en SunCare<br>
+            Atentamente, Equipo de Gestión de accesos de SunCare.
+        </p>
+    </mat-label>
+    <mat-label *ngIf="!isBotonAceptado">
+        <p>
+            Estimado,<br>
+            Lamentamos informarle que los datos y fotos brindadas no fueron suficientes
+            para verificar su identidad. Por favor, realice nuevamente la solicitud
+            teniendo en cuenta las siguientes recomendaciones:<br>
+            - Ingresar nombres completos y CMP exactamente como figura en el siguiente link: <a> https://www.cmp.org.pe/conoce-a-tu-medico/ </a><br>
+            - Adjuntar una foto tamaño carnet en la que se aprecie claramente su rostro.<br>
+            - Adjuntar una foto nítida del DNI.<br>
+            Gracias.<br>
+            Atentamente, Equipo de Gestión de accesos de SunCare.
+        </p>
+    </mat-label>
+</mat-card-content>
+<mat-card-actions >
+    <div class="button-right">
+        <button mat-stroked-button mat-dialog-close color="primary" style="margin-right: 10px;">Cancelar</button>
+        <button mat-flat-button color="primary" (click)="EnviarCorreo(isBotonAceptado)">Enviar</button>
+    </div>
+</mat-card-actions>

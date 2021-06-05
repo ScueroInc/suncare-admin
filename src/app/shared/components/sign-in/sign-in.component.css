@@ -1,0 +1,41 @@
+mat-sidenav-container {
+    height: 100%;
+  }
+.sigin-container {    
+    position: absolute;
+  width: max-content;
+      
+}
+mat-sidenav-content {
+  padding: 10%;
+}
+mat-card {
+    width: 400px;
+    align-items: center;
+  justify-content: center;
+}
+mat-card-header{
+    align-items: center;
+  justify-content: center;
+}
+mat-card-content {
+    align-items: center;
+  justify-content: center;
+  padding-left: 25%;
+}
+.image-part {
+  display: flex;
+  width: 50%;  
+  background: rgba(103,58,183,.15);
+}
+.signin-part {
+    width: 50%;
+}
+.button-center {
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
+}
+.message-error {
+  margin-bottom: 15px;
+}

@@ -1,0 +1,39 @@
+
+<ng-container>
+    <mat-sidenav-container class="signin-container" autosize>
+        <mat-sidenav class="image-part" mode="side" opened></mat-sidenav>
+        <mat-sidenav-content class="signin-part">
+            <mat-card class="card-signin" >
+                <mat-card-header>
+                    <mat-card-title> Iniciar sesión</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="loginForm" (ngSubmit)="SignInAdmin()">
+                        <mat-form-field appearance="outline">
+                            <mat-label >Correo</mat-label>
+                            <input matInput [formControl]="loginForm.controls.email"
+                            type="email" formControlName="email" required/>
+                            <mat-error
+                            *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
+                                Correo no válido
+                              </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label >Contraseña</mat-label>
+                            <input matInput type="password" formControlName="password" />
+                        </mat-form-field>
+                        <div >
+                            <mat-error class="message-error" *ngIf="errorFirebase!= null" >{{errorFirebase}}</mat-error>
+                        </div>
+                        <div class="button-center">
+                            <a>
+                            <button type="submit" mat-flat-button color="primary" [disabled]="!loginForm.valid">Ingresar</button>
+                            </a>
+                        </div>
+                    </form>
+                </mat-card-content>
+
+            </mat-card>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>

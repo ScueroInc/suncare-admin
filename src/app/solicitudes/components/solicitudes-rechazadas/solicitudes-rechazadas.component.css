@@ -1,0 +1,49 @@
+.container {
+    padding : 0%;
+    min-width: 1100px;
+}
+.mat-card-content {
+    text-align: center;
+}
+.card-size {
+    width: 263px;
+}
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.image-user{
+    padding-top: 5%;
+    padding-left: 22%;
+    padding-bottom: 5%;
+    width: 140px;
+    height: 200px;
+}
+
+.image-dni{
+    width: 200px;
+    min-width: 150px;
+    height: 170px;
+    min-height: 150px;
+    padding-left: 10%;
+}
+.full-width {
+    width: 100%;    
+    padding-left: 10%;
+    padding-top: 10px;
+}
+.drop-down {
+    padding-left: 10%;
+}
+.mat-spinner {
+    margin: 25% auto;
+}
+mat-grid-list {
+    margin-left: 15px;
+}
+::ng-deep .tooltip-warning {
+    white-space: pre-line !important;
+    text-align: center;    
+}

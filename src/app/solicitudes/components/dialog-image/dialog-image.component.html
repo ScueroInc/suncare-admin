@@ -1,0 +1,19 @@
+<mat-card-content>
+    <mat-card-actions >
+        <button mat-mini-fab mat-dialog-close color="primary">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-card-actions>      
+    <mat-grid-list cols="1" rowHeight="350px">
+         
+        <mat-grid-tile>                                   
+            <div class="image-user">
+                <img mat-card-image width="240px" height="300px" [src]="imagenProfile">
+            </div>
+        </mat-grid-tile>
+    
+        <mat-grid-tile>
+            <div class="img-dni"><img mat-card-image width="400px" height="350px" [src]="imagenDni"></div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card-content>

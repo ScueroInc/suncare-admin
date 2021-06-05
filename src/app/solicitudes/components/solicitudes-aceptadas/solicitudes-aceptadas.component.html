@@ -1,0 +1,40 @@
+<div class="container">
+    <table class="full-width"><tr>
+      <td><mat-form-field class="full-width">
+        <mat-label>Buscar dermatólogo</mat-label>
+        <input matInput name="filter" placeholder="Buscar dermatólogo" [(ngModel)]="filterSearch">
+      </mat-form-field></td>
+        
+      
+      <td><mat-form-field class="drop-down" appearance="">
+        <mat-label>Mes</mat-label>
+        <mat-select >        
+          <mat-option (click)="filtrar(mes.id)" *ngFor="let mes of meses" value="{{mes.id}}">{{mes.name}}</mat-option>
+        </mat-select>
+      </mat-form-field></td>    
+      
+    </tr></table>
+    <section>
+      <mat-spinner diameter="70" *ngIf="isLoading"></mat-spinner>
+    </section>
+      <mat-grid-list *ngIf="!isLoading" cols="4" rowHeight="620px" gutterSize="15px">
+        <mat-grid-tile *ngIf="dermatologos.length == 0" colspan="4">
+          <p style="text-align: end;">No se encontraron solicitudes aceptadas</p>
+        </mat-grid-tile>
+          <mat-grid-tile *ngFor="let dermatologo of dermatologos | filter:filterSearch">
+            
+              <mat-card class="card-size" [ngStyle]="{'background-color':  dermatologo.respuesta===true ? '#DDF2CE' : '#F2CCC9' }">                
+                  <mat-card-content>
+                    <div class="image-user"><img (click)="ejecutarDialogImage(dermatologo.imagenProfile, dermatologo.imagenDni)" mat-card-image width="140px" height="200px" src={{dermatologo.imagenProfile}}></div>
+                    <div class="image-dni"><img (click)="ejecutarDialogImage(dermatologo.imagenProfile, dermatologo.imagenDni)" mat-card-image width="200px" height="170px" src={{dermatologo.imagenDni}}></div>
+                  
+                    <p>{{dermatologo.nombre}} {{dermatologo.apellido}}</p>
+                    <p>CMP: {{dermatologo.codigo}}</p>
+                    <p >Fecha de solicitud: {{dermatologo.solicitudes?.fechaSolicitud  | date:'dd/MM/yyyy' }}</p>
+                    <p >Fecha aceptada: {{dermatologo.solicitudes?.fechaProcesada | date:'dd/MM/yyyy' }}</p>
+                  </mat-card-content>                  
+                </mat-card>
+            
+          </mat-grid-tile>        
+      </mat-grid-list>
+  </div>

@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" >
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Gestión de dermatólogos</span>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+          <a mat-list-item class="items-list" [routerLink]="['/solicitudes/pendientes']" [routerLinkActive]="['is-active']">
+            <mat-icon>watch_later </mat-icon>            
+            Solicitudes pendientes
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item class="items-list" [routerLink]="['/solicitudes/aceptadas']" [routerLinkActive]="['is-active']">
+            <mat-icon>check_circle_outline</mat-icon>
+            Solicitudes aceptadas
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item class="items-list" [routerLink]="['/solicitudes/rechazadas']" [routerLinkActive]="['is-active']">
+            <mat-icon>highlight_off</mat-icon>
+            Solicitudes rechazadas
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item class="log-out" (click)="logout()">                     
+            <mat-icon>logout</mat-icon>
+            Cerrar sesión
+            <mat-divider></mat-divider>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+    <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,48 @@
+mat-toolbar {
+    background-color: var(--main-color);
+    color: white;
+  }
+  
+  mat-sidenav-container {
+    height: 92%;
+  }
+  
+  mat-nav-list {
+    padding-top: 0px;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  a mat-icon {
+    color: var(--main-color);
+    padding-right: 5%;
+  }
+  
+  .items-list {
+    font-size: inherit;
+  }
+  
+  .items-list:hover {
+    background-color: var(--main-color);
+    color:rgb(106, 35, 153);
+    opacity: 0.7;  
+  }
+  .items-list:focus{
+    background-color: rgba(103,58,183,.15);
+    color: rgb(106, 35, 153);
+  }
+
+  .is-active {
+    background-color: rgba(103,58,183,.15);
+    color: rgb(106, 35, 153);
+}
+  .log-out {
+    margin-top: 200% !important;
+  }
+  .log-out:hover {
+    background-color: var(--main-color);
+    color:rgb(106, 35, 153);
+    opacity: 0.7;  
+  }

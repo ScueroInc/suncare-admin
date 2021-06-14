@@ -11,20 +11,30 @@ import { SnackbarComponent } from '../snackbar/snackbar.component';
   styleUrls: ['./page-layout.component.css']
 })
 export class PageLayoutComponent implements OnInit {
-
   isConnected = true;
+
   mensaje: string;
+
   icon:string;
+
   color: string;
 
-  constructor(private authSerivice: AuthService,
-              private router: Router,
-              private conexionService: ConnectionService,
-              private _snackbar: MatSnackBar) {
-
-    this.verificarConexionInternet();
+  hasNetworkConnection: boolean;
+  hasInternetAccess: boolean;
+  status: string;
+ 
+  constructor(private connectionService: ConnectionService) {
+    this.connectionService.monitor().subscribe(currentState => {
+      this.hasNetworkConnection = currentState.hasNetworkConnection;
+      this.hasInternetAccess = currentState.hasInternetAccess;
+      if (this.hasNetworkConnection && this.hasInternetAccess) {
+        this.status = 'ONLINE';
+      } else {
+        this.status = 'OFFLINE';
+      }
+    });
   }
-
+}
   ngOnInit(): void {
   }
 
@@ -58,6 +68,7 @@ export class PageLayoutComponent implements OnInit {
   openSnackNoInternet(icon: string, mensaje: string, color: string) {
     this._snackbar.openFromComponent(SnackbarComponent, {
       horizontalPosition: 'start',
+      duration: 4000,
       data : {
         icon: icon,
         mensaje: mensaje,
